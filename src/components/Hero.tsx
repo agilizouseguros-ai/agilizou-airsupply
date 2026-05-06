@@ -73,7 +73,7 @@ export function Hero() {
           </div>
 
           <div className="absolute -bottom-6 -left-4 lg:-left-8 rounded-2xl p-7 w-[280px] bg-white/70 backdrop-blur-xl border border-white/60 shadow-[0_20px_50px_-15px_rgba(15,23,42,0.25)]">
-            <AgilizouLogo width={78} />
+            <AgilizouLogo width={95} />
             <div
               className="mt-5 pt-4 border-t border-border/50 text-brand-orange"
               style={{ fontSize: "11px", letterSpacing: "1px", fontWeight: 700, textTransform: "uppercase" }}
@@ -81,7 +81,7 @@ export function Hero() {
               Benefício exclusivo AIRSUPPLY
             </div>
             <div className="mt-3">
-              <AirsupplyLogo width={88} />
+              <AirsupplyLogo width={85} />
             </div>
           </div>
 
