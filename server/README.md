@@ -41,7 +41,7 @@ Recarregar Nginx: `nginx -s reload`
 ### Frontend (.env na raiz do projeto)
 
 ```
-VITE_FORM_ENDPOINT=https://agilizouseguros.com.br/api/lead
+VITE_FORM_ENDPOINT=https://airsupply.agilizouseguros.com.br/api/lead
 ```
 
 Depois rodar `npm run build` e publicar a pasta `dist/` no Nginx.
