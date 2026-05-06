@@ -24,11 +24,13 @@ export function Header() {
       }`}
     >
       <div className="container-page flex items-center justify-between h-20">
-        <div className="flex items-center gap-5">
-          <AgilizouLogo height={42} />
-          <span className="hidden sm:block h-8 w-px bg-border/70" />
+        <div className="flex items-center gap-5 sm:gap-6">
+          <AgilizouLogo width={140} />
+          <span className="hidden sm:inline-block text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+            parceira
+          </span>
           <span className="hidden md:block">
-            <AirsupplyLogo height={38} />
+            <AirsupplyLogo width={160} />
           </span>
         </div>
         <nav className="hidden lg:flex items-center gap-7">
