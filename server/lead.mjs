@@ -111,32 +111,142 @@ app.post("/lead", async (req, res) => {
     });
 
     // 2) E-mail de agradecimento ao colaborador
-    const thanksHtml = `
-      <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;background:#ffffff;color:#0f1b3d">
-        <div style="background:linear-gradient(135deg,#0f1b3d,#1e3a5f);padding:32px 24px;text-align:center;border-radius:12px 12px 0 0">
-          <h1 style="color:#fff;margin:0;font-size:24px">Recebemos sua solicitação!</h1>
-        </div>
-        <div style="padding:28px 24px;border:1px solid #eee;border-top:0;border-radius:0 0 12px 12px">
-          <p style="font-size:16px;line-height:1.6">Olá <b>${escape(nome)}</b>,</p>
-          <p style="font-size:15px;line-height:1.6;color:#444">
-            Obrigado por entrar em contato com a <b>Agilizou Seguros</b>!
-            Em breve um especialista entrará em contato para falar sobre <b>${escape(tipoSeguro)}</b>
-            no horário preferencial: <b>${escape(melhorHorario)}</b>.
-          </p>
-          <p style="font-size:15px;line-height:1.6;color:#444">
-            Como colaborador <b>AIRSUPPLY</b>, você tem acesso a condições e atendimento exclusivos.
-          </p>
-          <div style="margin:28px 0;text-align:center">
-            <a href="https://wa.me/551129494838" style="background:#25D366;color:#fff;text-decoration:none;padding:14px 28px;border-radius:999px;font-weight:bold;display:inline-block">
-              💬 Falar agora no WhatsApp
-            </a>
-          </div>
-          <p style="font-size:13px;color:#888;margin-top:24px">
-            Se preferir, responda diretamente este e-mail.<br>
-            Agilizou Seguros — contato@agilizouseguros.com.br · (11) 2949-4838
-          </p>
-        </div>
-      </div>`;
+    const thanksHtml = `<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="x-apple-disable-message-reformatting" />
+  <title>Recebemos sua solicitação — Agilizou Seguros</title>
+</head>
+<body style="margin:0;padding:0;background-color:#F8FAFC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#1E293B;-webkit-font-smoothing:antialiased;">
+  <div style="display:none;max-height:0;overflow:hidden;opacity:0;">
+    Recebemos sua solicitação, ${escape(nome)}. Um especialista da Agilizou entrará em contato em breve.
+  </div>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#F8FAFC;padding:32px 16px;">
+    <tr>
+      <td align="center">
+        <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;width:100%;background-color:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(11,27,83,0.08);">
+
+          <!-- Header -->
+          <tr>
+            <td align="center" style="background-color:#0B1B53;background-image:linear-gradient(135deg,#0B1B53 0%,#152a7a 100%);padding:40px 24px;">
+              <img src="https://airsupply.agilizouseguros.com.br/assets/agilizou-logo-white-CgEWCLAN.png" alt="Agilizou Seguros" width="180" style="display:block;height:auto;max-width:180px;border:0;outline:none;text-decoration:none;" />
+            </td>
+          </tr>
+
+          <!-- Título -->
+          <tr>
+            <td style="padding:40px 40px 8px 40px;">
+              <h1 style="margin:0;font-size:26px;line-height:1.3;color:#0B1B53;font-weight:700;letter-spacing:-0.3px;">
+                Recebemos sua solicitação!
+              </h1>
+            </td>
+          </tr>
+
+          <!-- Texto -->
+          <tr>
+            <td style="padding:16px 40px 8px 40px;">
+              <p style="margin:0 0 16px 0;font-size:16px;line-height:1.6;color:#1E293B;">
+                Olá <strong>${escape(nome)}</strong>,
+              </p>
+              <p style="margin:0 0 16px 0;font-size:16px;line-height:1.6;color:#1E293B;">
+                Obrigado por entrar em contato com a <strong>Agilizou Seguros</strong>.
+              </p>
+              <p style="margin:0 0 16px 0;font-size:16px;line-height:1.6;color:#475569;">
+                Recebemos sua solicitação sobre <strong style="color:#0B1B53;">${escape(tipoSeguro)}</strong> e um especialista entrará em contato no horário preferencial <strong style="color:#0B1B53;">${escape(melhorHorario)}</strong>.
+              </p>
+            </td>
+          </tr>
+
+          <!-- Card benefícios -->
+          <tr>
+            <td style="padding:16px 40px 8px 40px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#F8FAFC;border:1px solid #E2E8F0;border-radius:12px;">
+                <tr>
+                  <td style="padding:24px 28px;">
+                    <p style="margin:0 0 16px 0;font-size:13px;font-weight:700;letter-spacing:1px;color:#FF6B00;text-transform:uppercase;">
+                      O que você pode esperar
+                    </p>
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                      <tr><td style="padding:6px 0;font-size:15px;color:#1E293B;line-height:1.5;"><span style="color:#FF6B00;font-weight:700;">✔</span> &nbsp;Atendimento consultivo</td></tr>
+                      <tr><td style="padding:6px 0;font-size:15px;color:#1E293B;line-height:1.5;"><span style="color:#FF6B00;font-weight:700;">✔</span> &nbsp;Condições exclusivas</td></tr>
+                      <tr><td style="padding:6px 0;font-size:15px;color:#1E293B;line-height:1.5;"><span style="color:#FF6B00;font-weight:700;">✔</span> &nbsp;Atendimento humanizado</td></tr>
+                      <tr><td style="padding:6px 0;font-size:15px;color:#1E293B;line-height:1.5;"><span style="color:#FF6B00;font-weight:700;">✔</span> &nbsp;Cobertura para toda a família</td></tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Botão WhatsApp -->
+          <tr>
+            <td align="center" style="padding:32px 40px 16px 40px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td align="center" style="background-color:#25D366;border-radius:999px;">
+                    <a href="https://wa.me/551129494838" target="_blank" style="display:inline-block;padding:16px 36px;font-size:16px;font-weight:700;color:#ffffff;text-decoration:none;border-radius:999px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+                      💬&nbsp;&nbsp;Falar agora no WhatsApp
+                    </a>
+                  </td>
+                </tr>
+              </table>
+              <p style="margin:14px 0 0 0;font-size:13px;color:#64748B;">
+                Atendimento rápido e direto com nosso time.
+              </p>
+            </td>
+          </tr>
+
+          <!-- Bloco AIRSUPPLY -->
+          <tr>
+            <td style="padding:24px 40px 8px 40px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#0B1B53;border-radius:12px;">
+                <tr>
+                  <td style="padding:22px 26px;">
+                    <p style="margin:0 0 4px 0;font-size:11px;font-weight:700;letter-spacing:2px;color:#FF6B00;text-transform:uppercase;">
+                      ★ Exclusivo
+                    </p>
+                    <p style="margin:0;font-size:16px;line-height:1.5;color:#ffffff;font-weight:600;">
+                      Benefício exclusivo para colaboradores AIRSUPPLY
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Divider -->
+          <tr>
+            <td style="padding:32px 40px 0 40px;">
+              <div style="border-top:1px solid #E2E8F0;"></div>
+            </td>
+          </tr>
+
+          <!-- Rodapé -->
+          <tr>
+            <td align="center" style="padding:24px 40px 40px 40px;">
+              <p style="margin:0 0 6px 0;font-size:14px;font-weight:700;color:#0B1B53;">
+                Agilizou Seguros
+              </p>
+              <p style="margin:0 0 4px 0;font-size:13px;color:#64748B;line-height:1.6;">
+                <a href="mailto:contato@agilizouseguros.com.br" style="color:#64748B;text-decoration:none;">contato@agilizouseguros.com.br</a>
+              </p>
+              <p style="margin:0;font-size:13px;color:#64748B;line-height:1.6;">
+                (11) 2949-4838
+              </p>
+              <p style="margin:18px 0 0 0;font-size:11px;color:#94A3B8;line-height:1.5;">
+                Você recebeu este e-mail porque preencheu nosso formulário em airsupply.agilizouseguros.com.br
+              </p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>`;
 
     await resend.emails.send({
       from: FROM_EMAIL,
