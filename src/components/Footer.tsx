@@ -1,5 +1,6 @@
 import { Facebook, Globe, Instagram, Linkedin, Mail, Phone } from "lucide-react";
-import { AgilizouLogo, AirsupplyLogo } from "./Logos";
+import { AirsupplyLogo } from "./Logos";
+import agilizouWhite from "@/assets/agilizou-logo-white.png";
 
 export function Footer() {
   return (
@@ -10,9 +11,7 @@ export function Footer() {
       <div className="container-page relative">
         <div className="grid md:grid-cols-3 gap-10">
           <div>
-            <div className="bg-white rounded-2xl px-5 py-4 inline-block shadow-soft">
-              <AgilizouLogo width={150} />
-            </div>
+            <img src={agilizouWhite} alt="Agilizou Seguros" width={150} className="h-auto select-none" draggable={false} />
             <p className="mt-4 text-white/70 text-sm leading-relaxed max-w-xs">
               Consultoria especializada em seguros, proteção e planejamento — com atendimento humano e digital.
             </p>
