@@ -33,7 +33,7 @@ export function Header() {
             Parceira
           </span>
           <span className="hidden sm:block">
-            <AirsupplyLogo width={135} />
+            <AirsupplyLogo width={160} />
           </span>
         </div>
         <nav className="hidden lg:flex items-center gap-7">

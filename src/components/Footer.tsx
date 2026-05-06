@@ -36,7 +36,7 @@ export function Footer() {
           <div>
             <h4 className="font-display font-semibold mb-4">Parceira</h4>
             <div className="rounded-2xl glass-dark p-5 flex flex-col items-center text-center">
-              <AirsupplyLogo variant="light" width={135} />
+              <AirsupplyLogo variant="light" width={170} />
               <p className="mt-4 text-xs text-white/70 leading-relaxed">
                 Programa de benefícios exclusivos para colaboradores da AIRSUPPLY Transporte e Logística.
               </p>
