@@ -1,4 +1,4 @@
-import { Facebook, Globe, Instagram, Linkedin, Mail, Phone } from "lucide-react";
+import { Globe, Instagram, Mail, Phone } from "lucide-react";
 import { AirsupplyLogo } from "./Logos";
 import agilizouWhite from "@/assets/agilizou-logo-white.png";
 
@@ -16,11 +16,24 @@ export function Footer() {
               Consultoria especializada em seguros, proteção e planejamento — com atendimento humano e digital.
             </p>
             <div className="mt-5 flex gap-3">
-              {[Instagram, Facebook, Linkedin].map((Icon, i) => (
-                <a key={i} href="#" className="h-10 w-10 rounded-full glass-dark flex items-center justify-center hover:bg-brand-orange/30 transition-colors" aria-label="Rede social">
-                  <Icon className="h-4 w-4" />
-                </a>
-              ))}
+              <a
+                href="https://www.instagram.com/agilizouseguros"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="h-10 w-10 rounded-full glass-dark flex items-center justify-center hover:bg-brand-orange/30 transition-colors"
+                aria-label="Instagram da Agilizou Seguros"
+              >
+                <Instagram className="h-4 w-4" />
+              </a>
+              <a
+                href="https://agilizouseguros.com.br/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="h-10 w-10 rounded-full glass-dark flex items-center justify-center hover:bg-brand-orange/30 transition-colors"
+                aria-label="Site da Agilizou Seguros"
+              >
+                <Globe className="h-4 w-4" />
+              </a>
             </div>
           </div>
 
