@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { z } from "zod";
-import { CheckCircle2, Loader2, Send } from "lucide-react";
+import { CheckCircle2, Loader2, MessageCircle, Send } from "lucide-react";
 
 const schema = z.object({
   nome: z.string().trim().min(2, "Informe seu nome").max(100),
@@ -79,6 +79,17 @@ export function LeadForm() {
         <p className="mt-2 text-muted-foreground">
           Em breve um especialista da Agilizou vai entrar em contato com você. 🧡
         </p>
+        <a
+          href={`https://wa.me/551129494838?text=${encodeURIComponent(
+            `Olá! Acabei de preencher o formulário no site (colaborador AIRSUPPLY). Meu nome é ${form.nome} e tenho interesse em ${form.produto || "uma cotação"}.`
+          )}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-whatsapp px-6 py-3 text-sm font-semibold text-white shadow-lg hover:scale-[1.02] transition-all"
+        >
+          <MessageCircle className="h-4 w-4" />
+          Falar agora com um especialista
+        </a>
       </div>
     );
   }
