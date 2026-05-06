@@ -1,13 +1,18 @@
 import agilizouSrc from "@/assets/agilizou-logo.png";
 import airsupplySrc from "@/assets/airsupply-logo.png";
 
-export function AgilizouLogo({ className = "", height = 40 }: { className?: string; height?: number }) {
+export function AgilizouLogo({
+  className = "",
+  width = 140,
+}: {
+  className?: string;
+  width?: number;
+}) {
   return (
     <img
       src={agilizouSrc}
       alt="Agilizou Seguros"
-      height={height}
-      style={{ height, width: "auto" }}
+      style={{ width, height: "auto" }}
       className={`object-contain select-none ${className}`}
       draggable={false}
     />
@@ -17,20 +22,19 @@ export function AgilizouLogo({ className = "", height = 40 }: { className?: stri
 export function AirsupplyLogo({
   className = "",
   variant = "dark",
-  height = 36,
+  width = 160,
 }: {
   className?: string;
   variant?: "dark" | "light";
-  height?: number;
+  width?: number;
 }) {
   return (
     <img
       src={airsupplySrc}
       alt="AIRSUPPLY Transporte e Logística"
-      height={height}
       style={{
-        height,
-        width: "auto",
+        width,
+        height: "auto",
         filter: variant === "light" ? "brightness(0) invert(1)" : "none",
       }}
       className={`object-contain select-none ${className}`}

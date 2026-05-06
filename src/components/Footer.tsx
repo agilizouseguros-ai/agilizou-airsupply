@@ -10,8 +10,8 @@ export function Footer() {
       <div className="container-page relative">
         <div className="grid md:grid-cols-3 gap-10">
           <div>
-            <div className="bg-white rounded-2xl p-4 inline-block shadow-soft">
-              <AgilizouLogo height={40} />
+            <div className="bg-white rounded-2xl px-5 py-4 inline-block shadow-soft">
+              <AgilizouLogo width={150} />
             </div>
             <p className="mt-4 text-white/70 text-sm leading-relaxed max-w-xs">
               Consultoria especializada em seguros, proteção e planejamento — com atendimento humano e digital.
@@ -36,13 +36,13 @@ export function Footer() {
 
           <div>
             <h4 className="font-display font-semibold mb-4">Parceira</h4>
-            <div className="rounded-2xl glass-dark p-4">
-              <AirsupplyLogo variant="light" />
-              <p className="mt-3 text-xs text-white/70 leading-relaxed">
+            <div className="rounded-2xl glass-dark p-5">
+              <AirsupplyLogo variant="light" width={160} />
+              <p className="mt-4 text-xs text-white/70 leading-relaxed">
                 Programa de benefícios exclusivos para colaboradores da AIRSUPPLY Transporte e Logística.
               </p>
-              <div className="mt-3 inline-flex items-center gap-2 rounded-full bg-brand-orange/20 border border-brand-orange/40 px-3 py-1 text-[0.65rem] uppercase tracking-wider text-white font-semibold">
-                Selo de parceria oficial
+              <div className="mt-4 inline-flex items-center gap-2 rounded-full bg-brand-orange/20 border border-brand-orange/40 px-3 py-1 text-[0.65rem] uppercase tracking-wider text-white font-semibold">
+                Benefício exclusivo AIRSUPPLY
               </div>
             </div>
           </div>

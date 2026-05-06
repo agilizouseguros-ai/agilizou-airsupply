@@ -16,7 +16,7 @@ export function Partnership() {
             <img src={partnership} alt="Parceria Agilizou e AIRSUPPLY" width={1280} height={960} loading="lazy" className="w-full h-auto" />
           </div>
           <div className="absolute -bottom-6 -right-4 glass rounded-2xl p-5 shadow-card max-w-[260px]">
-            <div className="text-xs uppercase tracking-wider text-brand-orange font-semibold">Parceria oficial</div>
+            <div className="text-xs uppercase tracking-wider text-brand-orange font-semibold">Parceria</div>
             <div className="font-display font-bold text-brand-navy mt-1">Benefício criado para colaboradores AIRSUPPLY</div>
           </div>
         </div>
