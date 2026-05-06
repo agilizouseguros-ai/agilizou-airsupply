@@ -21,7 +21,7 @@ export function Hero() {
           <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] text-brand-navy">
             Benefícios exclusivos em{" "}
             <span className="text-gradient-orange">seguros e proteção</span>{" "}
-            para colaboradores AIRSUPPLY
+            para colaboradores <span className="whitespace-nowrap">AIRSUPPLY</span>
           </h1>
 
           <p className="mt-6 text-lg text-muted-foreground max-w-xl leading-relaxed">
