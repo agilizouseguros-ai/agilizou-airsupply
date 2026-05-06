@@ -24,16 +24,22 @@ export function Header() {
       }`}
     >
       <div className="container-page flex items-center justify-between h-20">
-        <div className="flex items-center gap-3">
-          <AgilizouLogo width={155} className="block" />
+        <div className="flex items-center gap-2">
+          <AgilizouLogo width={135} className="block" />
           <span
-            className="hidden sm:inline-block ml-1 mr-0"
-            style={{ fontSize: "10px", letterSpacing: "3px", fontWeight: 700, color: "#6b7280", textTransform: "uppercase" }}
+            className="hidden sm:inline-block mx-1"
+            style={{ fontSize: "9px", letterSpacing: "2.5px", fontWeight: 700, color: "#9ca3af", textTransform: "uppercase" }}
+          >
+            ×
+          </span>
+          <span
+            className="hidden sm:inline-block"
+            style={{ fontSize: "9px", letterSpacing: "2.5px", fontWeight: 700, color: "#6b7280", textTransform: "uppercase" }}
           >
             Parceira
           </span>
-          <span className="hidden sm:flex items-center -ml-1">
-            <AirsupplyLogo width={220} />
+          <span className="hidden sm:flex items-center ml-1">
+            <AirsupplyLogo width={210} />
           </span>
         </div>
         <nav className="hidden lg:flex items-center gap-7">
