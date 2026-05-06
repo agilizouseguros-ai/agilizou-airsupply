@@ -61,6 +61,41 @@ export function Hero() {
         </div>
 
         <div className="relative animate-fade-up" style={{ animationDelay: "150ms" }}>
+          <div className="mb-6 rounded-3xl bg-white/70 backdrop-blur-xl border border-white/60 shadow-[0_20px_50px_-20px_rgba(15,23,42,0.22)] px-7 py-6">
+            <div
+              className="inline-flex items-center gap-2 rounded-full bg-brand-navy/5 px-3 py-1 mb-5"
+              style={{ fontSize: "10px", letterSpacing: "2.2px", fontWeight: 700, color: "#475569", textTransform: "uppercase" }}
+            >
+              <BadgeCheck className="h-3.5 w-3.5 text-brand-orange" />
+              Parceria corporativa
+            </div>
+
+            <div className="flex items-center gap-6">
+              <AgilizouLogo width={140} />
+              <span className="h-10 w-px bg-border/70" />
+              <AirsupplyLogo width={155} />
+            </div>
+
+            <p className="mt-5 text-sm text-muted-foreground leading-relaxed">
+              Benefícios exclusivos em seguros e proteção para colaboradores AIRSUPPLY.
+            </p>
+
+            <ul className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-2 text-[11px] font-medium text-brand-navy">
+              <li className="flex items-center gap-1.5">
+                <Heart className="h-3.5 w-3.5 text-brand-orange" />
+                Atendimento humanizado
+              </li>
+              <li className="flex items-center gap-1.5">
+                <BadgeCheck className="h-3.5 w-3.5 text-brand-orange" />
+                Condições diferenciadas
+              </li>
+              <li className="flex items-center gap-1.5">
+                <ShieldCheck className="h-3.5 w-3.5 text-brand-orange" />
+                Extensivos à família
+              </li>
+            </ul>
+          </div>
+
           <div className="relative rounded-3xl overflow-hidden shadow-card">
             <img
               src={heroImg}
@@ -72,20 +107,7 @@ export function Hero() {
             <div className="absolute inset-0 bg-gradient-to-tr from-brand-navy/40 via-transparent to-transparent" />
           </div>
 
-          <div className="absolute -bottom-6 -left-4 lg:-left-8 rounded-2xl px-5 py-4 w-[235px] bg-white/75 backdrop-blur-xl border border-white/60 shadow-[0_18px_45px_-15px_rgba(15,23,42,0.28)] flex flex-col items-center text-center">
-            <AgilizouLogo width={88} />
-            <div
-              className="mt-3 pt-3 border-t border-border/50 text-brand-orange w-full"
-              style={{ fontSize: "9.5px", letterSpacing: "1.2px", fontWeight: 700, textTransform: "uppercase" }}
-            >
-              Benefício exclusivo
-            </div>
-            <div className="mt-2 flex justify-center">
-              <AirsupplyLogo width={130} />
-            </div>
-          </div>
-
-          <div className="absolute -top-4 -right-2 lg:-right-6 glass rounded-2xl p-4 shadow-card hidden sm:block">
+          <div className="absolute top-[40%] -right-2 lg:-right-6 glass rounded-2xl p-4 shadow-card hidden sm:block">
             <div className="text-xs text-muted-foreground">Atendimento prioritário</div>
             <div className="font-display font-bold text-2xl text-brand-navy">+8 produtos</div>
             <div className="text-xs text-brand-orange font-semibold">com condições exclusivas</div>
