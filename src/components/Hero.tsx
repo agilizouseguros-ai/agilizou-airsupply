@@ -51,7 +51,7 @@ export function Hero() {
           <div className="mt-10 flex items-center gap-6 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
               <ShieldCheck className="h-5 w-5 text-brand-sky" />
-              <span>Atendimento humanizado</span>
+              <span>Apoio consultivo especializado</span>
             </div>
             <div className="hidden sm:flex items-center gap-2">
               <ShieldCheck className="h-5 w-5 text-brand-sky" />
