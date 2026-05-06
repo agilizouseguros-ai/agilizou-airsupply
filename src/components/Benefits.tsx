@@ -3,7 +3,7 @@ import { Award, BadgeCheck, Clock, HeartHandshake, MonitorSmartphone, Sparkles, 
 const benefits = [
   { icon: Clock, title: "Atendimento prioritário", text: "Sua solicitação tratada com agilidade exclusiva." },
   { icon: UserCheck, title: "Consultoria personalizada", text: "Especialista dedicado para entender seu perfil." },
-  { icon: BadgeCheck, title: "Condições diferenciadas", text: "Vantagens negociadas para colaboradores AIRSUPPLY." },
+  { icon: BadgeCheck, title: "Condições diferenciadas", text: "Vantagens negociadas para colaboradores AirSupply." },
   { icon: HeartHandshake, title: "Atendimento humanizado", text: "Pessoas reais, escuta ativa, sem robôs." },
   { icon: Sparkles, title: "Cotação simplificada", text: "Processo digital, rápido e sem burocracia." },
   { icon: Users, title: "Extensivo à família", text: "Benefícios também para cônjuge, filhos e pais." },
@@ -18,7 +18,7 @@ export function Benefits() {
         <div className="max-w-2xl mx-auto text-center">
           <span className="inline-block text-xs font-semibold uppercase tracking-[0.2em] text-brand-orange">Benefícios exclusivos</span>
           <h2 className="mt-3 font-display text-3xl sm:text-4xl font-bold text-brand-navy">
-            Tudo o que você ganha sendo um colaborador AIRSUPPLY
+            Tudo o que você ganha sendo um colaborador AirSupply
           </h2>
           <p className="mt-4 text-muted-foreground">
             Vantagens reais para você proteger sua vida, sua família e seu patrimônio com tranquilidade.

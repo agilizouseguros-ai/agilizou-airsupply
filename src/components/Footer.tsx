@@ -51,10 +51,10 @@ export function Footer() {
             <div className="rounded-2xl glass-dark p-5 flex flex-col items-center text-center">
               <AirsupplyLogo variant="light" width={165} />
               <p className="mt-4 text-xs text-white/70 leading-relaxed">
-                Programa de benefícios exclusivos para colaboradores da AIRSUPPLY Transporte e Logística.
+                Programa de benefícios exclusivos para colaboradores da AirSupply Transporte e Logística.
               </p>
               <div className="mt-4 inline-flex items-center gap-2 rounded-full bg-brand-orange/20 border border-brand-orange/40 px-3 py-1 text-[0.65rem] uppercase tracking-wider text-white font-semibold">
-                Benefício exclusivo AIRSUPPLY
+                Benefício exclusivo AirSupply
               </div>
             </div>
           </div>
@@ -62,7 +62,7 @@ export function Footer() {
 
         <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row gap-3 items-center justify-between text-xs text-white/60">
           <span>© {new Date().getFullYear()} Agilizou Seguros — Todos os direitos reservados.</span>
-          <span>Feito com 🧡 para colaboradores AIRSUPPLY</span>
+          <span>Feito com 🧡 para colaboradores AirSupply</span>
         </div>
       </div>
     </footer>

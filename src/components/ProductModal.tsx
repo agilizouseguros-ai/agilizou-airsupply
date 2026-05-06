@@ -81,7 +81,7 @@ export function ProductModal({
             </div>
             <div>
               <div className="text-[0.7rem] uppercase tracking-[0.2em] text-brand-sky font-semibold">
-                Benefício colaborador AIRSUPPLY
+                Benefício colaborador AirSupply
               </div>
               <h3 id="product-modal-title" className="mt-1 font-display text-2xl sm:text-[1.7rem] font-bold leading-tight">
                 {product.title}
@@ -121,7 +121,7 @@ export function ProductModal({
 
           <div className="rounded-2xl border border-brand-orange/25 bg-gradient-to-br from-brand-orange/8 to-transparent p-5">
             <div className="text-[0.7rem] uppercase tracking-[0.2em] text-brand-orange font-semibold">
-              Para colaboradores AIRSUPPLY
+              Para colaboradores AirSupply
             </div>
             <p className="mt-1.5 text-sm text-brand-navy/90 leading-relaxed">{product.benefit}</p>
           </div>
@@ -143,7 +143,7 @@ export function ProductModal({
         {/* footer CTAs */}
         <div className="sticky bottom-0 bg-card/95 backdrop-blur border-t border-border px-6 sm:px-8 py-4 flex flex-col-reverse sm:flex-row gap-3 sm:items-center sm:justify-end rounded-b-3xl">
           <a
-            href={whatsappLink(`Olá, sou colaborador AIRSUPPLY e quero atendimento sobre ${product.title}.`)}
+            href={whatsappLink(`Olá, sou colaborador AirSupply e quero atendimento sobre ${product.title}.`)}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-medium text-brand-navy hover:bg-muted transition"

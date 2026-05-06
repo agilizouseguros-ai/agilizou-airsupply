@@ -21,7 +21,7 @@ export function Hero() {
           <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] text-brand-navy">
             Benefícios exclusivos em{" "}
             <span className="text-gradient-orange">seguros e proteção</span>{" "}
-            para colaboradores <span className="whitespace-nowrap">AIRSUPPLY</span>
+            para colaboradores <span className="whitespace-nowrap">AirSupply</span>
           </h1>
 
           <p className="mt-6 text-lg text-muted-foreground max-w-xl leading-relaxed">
@@ -77,7 +77,7 @@ export function Hero() {
             </div>
 
             <p className="mt-5 text-sm text-muted-foreground leading-relaxed">
-              Benefícios exclusivos em seguros e proteção para colaboradores AIRSUPPLY.
+              Benefícios exclusivos em seguros e proteção para colaboradores AirSupply.
             </p>
 
             <ul className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-2 text-[11px] font-medium text-brand-navy">
@@ -99,7 +99,7 @@ export function Hero() {
           <div className="relative rounded-3xl overflow-hidden shadow-card">
             <img
               src={heroImg}
-              alt="Equipe de colaboradores felizes — benefício corporativo Agilizou + AIRSUPPLY"
+              alt="Equipe de colaboradores felizes — benefício corporativo Agilizou + AirSupply"
               width={1536}
               height={1024}
               className="w-full h-auto object-cover"

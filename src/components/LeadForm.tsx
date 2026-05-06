@@ -101,7 +101,7 @@ export function LeadForm() {
         </p>
         <a
           href={`https://wa.me/551129494838?text=${encodeURIComponent(
-            `Olá! Acabei de preencher o formulário no site (colaborador AIRSUPPLY). Meu nome é ${form.nome} e tenho interesse em ${form.produto || "uma cotação"}.`
+            `Olá! Acabei de preencher o formulário no site (colaborador AirSupply). Meu nome é ${form.nome} e tenho interesse em ${form.produto || "uma cotação"}.`
           )}`}
           target="_blank"
           rel="noopener noreferrer"

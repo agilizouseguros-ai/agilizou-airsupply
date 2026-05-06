@@ -31,7 +31,7 @@ export function AirsupplyLogo({
   return (
     <img
       src={airsupplySrc}
-      alt="AIRSUPPLY Transporte e Logística"
+      alt="AirSupply Transporte e Logística"
       style={{
         width,
         height: "auto",

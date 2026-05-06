@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Plus } from "lucide-react";
 
 const faqs = [
-  { q: "Como funciona o benefício?", a: "Como colaborador AIRSUPPLY, você acessa condições exclusivas em todos os produtos da Agilizou — basta solicitar atendimento pelo formulário ou WhatsApp." },
+  { q: "Como funciona o benefício?", a: "Como colaborador AirSupply, você acessa condições exclusivas em todos os produtos da Agilizou — basta solicitar atendimento pelo formulário ou WhatsApp." },
   { q: "Posso incluir familiares?", a: "Sim. Os benefícios são extensivos a cônjuge, filhos e dependentes diretos." },
   { q: "O atendimento é personalizado?", a: "Totalmente. Um consultor dedicado entende seu perfil e indica as melhores opções." },
   { q: "Como recebo minha cotação?", a: "Após o contato com seu consultor, você recebe a cotação por WhatsApp ou e-mail, no horário escolhido." },
