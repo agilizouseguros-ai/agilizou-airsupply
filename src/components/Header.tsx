@@ -24,13 +24,16 @@ export function Header() {
       }`}
     >
       <div className="container-page flex items-center justify-between h-20">
-        <div className="flex items-center gap-5 sm:gap-6">
-          <AgilizouLogo width={140} />
-          <span className="hidden sm:inline-block text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-            parceira
+        <div className="flex items-center gap-[14px]">
+          <AgilizouLogo width={115} />
+          <span
+            className="hidden sm:inline-block uppercase"
+            style={{ fontSize: "11px", letterSpacing: "2px", fontWeight: 600, color: "#6b7280" }}
+          >
+            PARCEIRA
           </span>
-          <span className="hidden md:block">
-            <AirsupplyLogo width={160} />
+          <span className="hidden sm:block">
+            <AirsupplyLogo width={125} />
           </span>
         </div>
         <nav className="hidden lg:flex items-center gap-7">

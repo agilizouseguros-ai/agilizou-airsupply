@@ -11,7 +11,7 @@ export function Footer() {
       <div className="container-page relative">
         <div className="grid md:grid-cols-3 gap-10">
           <div>
-            <img src={agilizouWhite} alt="Agilizou Seguros" width={150} className="h-auto select-none" draggable={false} />
+            <img src={agilizouWhite} alt="Agilizou Seguros" style={{ width: 120, height: "auto", objectFit: "contain" }} className="select-none block" draggable={false} />
             <p className="mt-4 text-white/70 text-sm leading-relaxed max-w-xs">
               Consultoria especializada em seguros, proteção e planejamento — com atendimento humano e digital.
             </p>
