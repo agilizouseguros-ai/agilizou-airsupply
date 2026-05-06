@@ -1,4 +1,4 @@
-import { ArrowRight, MessageCircle, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowRight, MessageCircle, ShieldCheck, Sparkles, Heart, BadgeCheck } from "lucide-react";
 import heroImg from "@/assets/hero-team.jpg";
 import { AgilizouLogo, AirsupplyLogo } from "./Logos";
 import { whatsappLink } from "./WhatsAppFloat";
