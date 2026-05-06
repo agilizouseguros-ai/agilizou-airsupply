@@ -40,10 +40,11 @@
   --color-brand-sky: var(--brand-sky);
   --color-whatsapp: var(--whatsapp);
 
-  --animate-fade-in: fade-in 0.6s ease-out both;
+  --animate-fade-in: fade-in 0.35s ease-out both;
   --animate-fade-up: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
   --animate-float: float 6s ease-in-out infinite;
   --animate-pulse-glow: pulse-glow 2.5s ease-in-out infinite;
+  --animate-modal-up: modal-up 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 :root {
@@ -117,6 +118,10 @@
 @keyframes pulse-glow {
   0%, 100% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--whatsapp) 50%, transparent); }
   50% { box-shadow: 0 0 0 16px color-mix(in oklab, var(--whatsapp) 0%, transparent); }
+}
+@keyframes modal-up {
+  from { opacity: 0; transform: translateY(24px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 @layer base {

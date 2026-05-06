@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { z } from "zod";
 import { CheckCircle2, Loader2, Send } from "lucide-react";
 
@@ -36,6 +36,18 @@ export function LeadForm() {
     setForm((f) => ({ ...f, [k]: k === "whatsapp" ? maskPhone(v) : v }));
     setErrors((e) => ({ ...e, [k]: "" }));
   };
+
+  useEffect(() => {
+    const onPick = (e: Event) => {
+      const id = (e as CustomEvent<string>).detail;
+      if (!id) return;
+      const match = products.find((p) => p === id) ?? "Outro";
+      setForm((f) => ({ ...f, produto: match }));
+      setErrors((e2) => ({ ...e2, produto: "" }));
+    };
+    window.addEventListener("agilizou:select-product", onPick as EventListener);
+    return () => window.removeEventListener("agilizou:select-product", onPick as EventListener);
+  }, []);
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();

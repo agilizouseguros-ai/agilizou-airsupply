@@ -16,11 +16,10 @@ export function WhatsAppFloat() {
       href={whatsappLink()}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Falar pelo WhatsApp"
-      className="fixed bottom-5 right-5 z-50 flex items-center gap-2 rounded-full bg-whatsapp px-4 py-3 text-white shadow-card animate-pulse-glow hover:scale-105 transition-transform"
+      aria-label="Falar pelo WhatsApp (canal de apoio)"
+      className="fixed bottom-5 right-5 z-50 inline-flex items-center justify-center h-12 w-12 rounded-full bg-whatsapp text-white shadow-soft hover:scale-105 hover:shadow-card transition-all"
     >
-      <MessageCircle className="h-6 w-6" strokeWidth={2.4} />
-      <span className="hidden sm:inline font-semibold text-sm pr-1">WhatsApp</span>
+      <MessageCircle className="h-5 w-5" strokeWidth={2.4} />
     </a>
   );
 }
