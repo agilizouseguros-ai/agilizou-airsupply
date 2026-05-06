@@ -60,10 +60,30 @@ export function LeadForm() {
     }
     setLoading(true);
     try {
-      // Webhook integration placeholder — replace with real CRM endpoint
-      await new Promise((r) => setTimeout(r, 1200));
-      // await fetch("/api/leads", { method: "POST", body: JSON.stringify({ ...form, origem: "AIRSUPPLY", tag: "AIRSUPPLY" }) });
+      const endpoint = import.meta.env.VITE_FORM_ENDPOINT;
+      if (!endpoint) {
+        console.error("VITE_FORM_ENDPOINT não configurado");
+        throw new Error("Endpoint não configurado");
+      }
+      const payload = {
+        nome: form.nome,
+        email: form.email,
+        whatsapp: form.whatsapp,
+        tipoSeguro: form.produto,
+        melhorHorario: form.horario,
+        observacoes: form.observacoes ?? "",
+        origem: "airsupply",
+      };
+      const res = await fetch(endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) throw new Error(`Erro ${res.status}`);
       setDone(true);
+    } catch (err) {
+      console.error("Falha ao enviar lead:", err);
+      setErrors((e) => ({ ...e, nome: "Não foi possível enviar agora. Tente novamente em instantes." }));
     } finally {
       setLoading(false);
     }
@@ -77,7 +97,7 @@ export function LeadForm() {
         </div>
         <h3 className="font-display text-2xl font-bold text-brand-navy">Recebemos sua solicitação!</h3>
         <p className="mt-2 text-muted-foreground">
-          Em breve um especialista da Agilizou vai entrar em contato com você. 🧡
+          Em breve um especialista da Agilizou entrará em contato.
         </p>
         <a
           href={`https://wa.me/551129494838?text=${encodeURIComponent(
