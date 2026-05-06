@@ -81,7 +81,7 @@ export function Hero() {
               Benefício exclusivo AIRSUPPLY
             </div>
             <div className="mt-3">
-              <AirsupplyLogo width={85} />
+              <AirsupplyLogo width={105} />
             </div>
           </div>
 
