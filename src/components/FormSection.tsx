@@ -2,7 +2,6 @@ import { LeadForm } from "./LeadForm";
 import { CheckCircle2 } from "lucide-react";
 
 const points = [
-  "Resposta em até 1 dia útil",
   "Sem custo, sem compromisso",
   "Atendimento humano e consultivo",
   "Tag exclusiva: colaborador AIRSUPPLY",

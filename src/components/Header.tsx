@@ -23,12 +23,12 @@ export function Header() {
         scrolled ? "glass shadow-soft" : "bg-transparent"
       }`}
     >
-      <div className="container-page flex items-center justify-between h-16">
-        <div className="flex items-center gap-3">
-          <AgilizouLogo height={36} />
-          <span className="hidden sm:block h-6 w-px bg-border" />
+      <div className="container-page flex items-center justify-between h-20">
+        <div className="flex items-center gap-5">
+          <AgilizouLogo height={42} />
+          <span className="hidden sm:block h-8 w-px bg-border/70" />
           <span className="hidden md:block">
-            <AirsupplyLogo height={28} />
+            <AirsupplyLogo height={38} />
           </span>
         </div>
         <nav className="hidden lg:flex items-center gap-7">

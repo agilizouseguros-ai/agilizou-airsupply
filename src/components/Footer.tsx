@@ -35,7 +35,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-display font-semibold mb-4">Parceria oficial</h4>
+            <h4 className="font-display font-semibold mb-4">Parceira</h4>
             <div className="rounded-2xl glass-dark p-4">
               <AirsupplyLogo variant="light" />
               <p className="mt-3 text-xs text-white/70 leading-relaxed">

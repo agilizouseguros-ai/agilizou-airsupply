@@ -21,7 +21,7 @@ export function Hero() {
           <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] text-brand-navy">
             Benefícios exclusivos em{" "}
             <span className="text-gradient-orange">seguros e proteção</span>{" "}
-            para colaboradores AIRSUPPLY
+            para colaboradores <span className="whitespace-nowrap">AIRSUPPLY</span>
           </h1>
 
           <p className="mt-6 text-lg text-muted-foreground max-w-xl leading-relaxed">
@@ -72,13 +72,13 @@ export function Hero() {
             <div className="absolute inset-0 bg-gradient-to-tr from-brand-navy/40 via-transparent to-transparent" />
           </div>
 
-          <div className="absolute -bottom-6 -left-4 lg:-left-8 glass rounded-2xl p-4 shadow-card max-w-[280px]">
-            <AgilizouLogo height={32} />
-            <div className="mt-3 pt-3 border-t border-border/60 text-[0.65rem] text-muted-foreground uppercase tracking-wider">
-              parceria oficial com
+          <div className="absolute -bottom-6 -left-4 lg:-left-8 glass rounded-2xl p-6 shadow-card max-w-[320px]">
+            <AgilizouLogo height={42} />
+            <div className="mt-4 pt-4 border-t border-border/60 text-[0.65rem] text-muted-foreground uppercase tracking-wider font-semibold">
+              Benefício exclusivo AIRSUPPLY
             </div>
-            <div className="mt-2">
-              <AirsupplyLogo height={26} />
+            <div className="mt-3">
+              <AirsupplyLogo height={34} />
             </div>
           </div>
 
