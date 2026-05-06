@@ -27,7 +27,7 @@ export function Partnership() {
             Uma união pensada para proteger quem move a AIRSUPPLY.
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            A Agilizou Seguros é a corretora parceira oficial da AIRSUPPLY Transporte e Logística.
+            A Agilizou Seguros é a corretora parceira da AIRSUPPLY Transporte e Logística.
             Juntas, oferecemos um portal de benefícios com condições exclusivas, atendimento
             consultivo e suporte humano — para você cuidar do que importa de verdade.
           </p>
