@@ -72,16 +72,16 @@ export function Hero() {
             <div className="absolute inset-0 bg-gradient-to-tr from-brand-navy/40 via-transparent to-transparent" />
           </div>
 
-          <div className="absolute -bottom-6 -left-4 lg:-left-8 rounded-2xl p-8 w-[310px] bg-white/70 backdrop-blur-xl border border-white/60 shadow-[0_20px_50px_-15px_rgba(15,23,42,0.25)]">
-            <AgilizouLogo width={105} />
+          <div className="absolute -bottom-6 -left-4 lg:-left-8 rounded-2xl p-8 w-[320px] bg-white/70 backdrop-blur-xl border border-white/60 shadow-[0_20px_50px_-15px_rgba(15,23,42,0.25)] flex flex-col items-center text-center">
+            <AgilizouLogo width={95} />
             <div
-              className="mt-5 pt-4 border-t border-border/50 text-brand-orange"
+              className="mt-5 pt-4 border-t border-border/50 text-brand-orange w-full"
               style={{ fontSize: "11px", letterSpacing: "1px", fontWeight: 700, textTransform: "uppercase" }}
             >
               Benefício exclusivo AIRSUPPLY
             </div>
-            <div className="mt-3">
-              <AirsupplyLogo width={130} />
+            <div className="mt-4 flex justify-center">
+              <AirsupplyLogo width={145} />
             </div>
           </div>
 
