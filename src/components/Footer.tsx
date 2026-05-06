@@ -10,8 +10,8 @@ export function Footer() {
       <div className="container-page relative">
         <div className="grid md:grid-cols-3 gap-10">
           <div>
-            <div className="bg-white rounded-2xl p-3 inline-block">
-              <AgilizouLogo />
+            <div className="bg-white rounded-2xl p-4 inline-block shadow-soft">
+              <AgilizouLogo height={40} />
             </div>
             <p className="mt-4 text-white/70 text-sm leading-relaxed max-w-xs">
               Consultoria especializada em seguros, proteção e planejamento — com atendimento humano e digital.

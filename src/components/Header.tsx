@@ -25,11 +25,10 @@ export function Header() {
     >
       <div className="container-page flex items-center justify-between h-16">
         <div className="flex items-center gap-3">
-          <AgilizouLogo />
+          <AgilizouLogo height={36} />
           <span className="hidden sm:block h-6 w-px bg-border" />
-          <span className="hidden sm:block text-xs text-muted-foreground">parceria oficial</span>
           <span className="hidden md:block">
-            <AirsupplyLogo />
+            <AirsupplyLogo height={28} />
           </span>
         </div>
         <nav className="hidden lg:flex items-center gap-7">
