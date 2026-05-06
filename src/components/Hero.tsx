@@ -72,13 +72,13 @@ export function Hero() {
             <div className="absolute inset-0 bg-gradient-to-tr from-brand-navy/40 via-transparent to-transparent" />
           </div>
 
-          <div className="absolute -bottom-6 -left-4 lg:-left-8 glass rounded-2xl p-4 shadow-card max-w-[280px]">
-            <AgilizouLogo height={32} />
-            <div className="mt-3 pt-3 border-t border-border/60 text-[0.65rem] text-muted-foreground uppercase tracking-wider">
-              parceria oficial com
+          <div className="absolute -bottom-6 -left-4 lg:-left-8 glass rounded-2xl p-6 shadow-card max-w-[320px]">
+            <AgilizouLogo height={42} />
+            <div className="mt-4 pt-4 border-t border-border/60 text-[0.65rem] text-muted-foreground uppercase tracking-wider font-semibold">
+              Benefício exclusivo AIRSUPPLY
             </div>
-            <div className="mt-2">
-              <AirsupplyLogo height={26} />
+            <div className="mt-3">
+              <AirsupplyLogo height={34} />
             </div>
           </div>
 
