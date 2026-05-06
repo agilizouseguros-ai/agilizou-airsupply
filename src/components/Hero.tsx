@@ -70,10 +70,10 @@ export function Hero() {
               Parceria corporativa
             </div>
 
-            <div className="flex items-center gap-6">
-              <AgilizouLogo width={140} />
-              <span className="h-10 w-px bg-border/70" />
-              <AirsupplyLogo width={155} />
+            <div className="flex items-center gap-7">
+              <AgilizouLogo width={140} className="block" />
+              <span className="h-12 w-px bg-border/70 shrink-0" />
+              <AirsupplyLogo width={225} className="block" />
             </div>
 
             <p className="mt-5 text-sm text-muted-foreground leading-relaxed">
