@@ -4,7 +4,7 @@ import { CheckCircle2 } from "lucide-react";
 const points = [
   "Sem custo, sem compromisso",
   "Atendimento humano e consultivo",
-  "Tag exclusiva: colaborador AIRSUPPLY",
+  "Tag exclusiva: colaborador AirSupply",
 ];
 
 export function FormSection() {
@@ -18,7 +18,7 @@ export function FormSection() {
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
             Preencha o formulário e nossa equipe entra em contato com sua consultoria personalizada.
-            Rápido, simples e com as condições exclusivas para colaboradores AIRSUPPLY.
+            Rápido, simples e com as condições exclusivas para colaboradores AirSupply.
           </p>
           <ul className="mt-8 space-y-3">
             {points.map((p) => (

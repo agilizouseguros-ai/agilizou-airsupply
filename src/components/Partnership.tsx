@@ -2,9 +2,9 @@ import { Building2, HeartHandshake, Users } from "lucide-react";
 import partnership from "@/assets/partnership.jpg";
 
 const items = [
-  { icon: Building2, title: "AIRSUPPLY valoriza seu time", text: "A empresa investe em benefícios reais que cuidam de você e da sua família." },
+  { icon: Building2, title: "AirSupply valoriza seu time", text: "A empresa investe em benefícios reais que cuidam de você e da sua família." },
   { icon: HeartHandshake, title: "Agilizou como consultoria", text: "Especialistas que orientam a melhor escolha — sem custo e sem compromisso." },
-  { icon: Users, title: "Acesso descomplicado", text: "Atendimento prioritário, digital e humano para colaboradores AIRSUPPLY." },
+  { icon: Users, title: "Acesso descomplicado", text: "Atendimento prioritário, digital e humano para colaboradores AirSupply." },
 ];
 
 export function Partnership() {
@@ -13,21 +13,21 @@ export function Partnership() {
       <div className="container-page grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <div className="relative">
           <div className="rounded-3xl overflow-hidden shadow-card">
-            <img src={partnership} alt="Parceria Agilizou e AIRSUPPLY" width={1280} height={960} loading="lazy" className="w-full h-auto" />
+            <img src={partnership} alt="Parceria Agilizou e AirSupply" width={1280} height={960} loading="lazy" className="w-full h-auto" />
           </div>
           <div className="absolute -bottom-6 -right-4 glass rounded-2xl p-5 shadow-card max-w-[260px]">
             <div className="text-xs uppercase tracking-wider text-brand-orange font-semibold">Parceria</div>
-            <div className="font-display font-bold text-brand-navy mt-1">Benefício criado para colaboradores AIRSUPPLY</div>
+            <div className="font-display font-bold text-brand-navy mt-1">Benefício criado para colaboradores AirSupply</div>
           </div>
         </div>
 
         <div>
           <span className="inline-block text-xs font-semibold uppercase tracking-[0.2em] text-brand-orange">A parceria</span>
           <h2 className="mt-3 font-display text-3xl sm:text-4xl font-bold text-brand-navy leading-tight">
-            Uma união pensada para proteger quem move a AIRSUPPLY.
+            Uma união pensada para proteger quem move a AirSupply.
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            A Agilizou Seguros é a corretora parceira da AIRSUPPLY Transporte e Logística.
+            A Agilizou Seguros é a corretora parceira da AirSupply Transporte e Logística.
             Juntas, oferecemos um portal de benefícios com condições exclusivas, atendimento
             consultivo e suporte humano — para você cuidar do que importa de verdade.
           </p>

@@ -2,7 +2,7 @@ import { MessageCircle } from "lucide-react";
 
 const PHONE = "551129494838";
 const MSG = encodeURIComponent(
-  "Olá, quero conhecer os benefícios exclusivos da parceria AIRSUPPLY + Agilizou Seguros."
+  "Olá, quero conhecer os benefícios exclusivos da parceria AirSupply + Agilizou Seguros."
 );
 
 export function whatsappLink(custom?: string) {

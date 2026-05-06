@@ -21,7 +21,7 @@ const products: ProductDetail[] = [
       "Acompanhamento em sinistros e renovações",
       "Atendimento humano, sem call center",
     ],
-    benefit: "Como colaborador AIRSUPPLY, você tem atendimento prioritário, condições diferenciadas e o benefício também é extensivo aos veículos da família.",
+    benefit: "Como colaborador AirSupply, você tem atendimento prioritário, condições diferenciadas e o benefício também é extensivo aos veículos da família.",
     ideal: ["Quem usa o carro diariamente", "Famílias com mais de um veículo", "Motociclistas urbanos", "Motoristas de aplicativo"],
   },
   {
@@ -42,7 +42,7 @@ const products: ProductDetail[] = [
       "Sem burocracia na contratação",
       "Acompanhamento humano em todo o processo",
     ],
-    benefit: "Condições diferenciadas para colaboradores AIRSUPPLY com extensão da proteção para cônjuge, filhos e pais.",
+    benefit: "Condições diferenciadas para colaboradores AirSupply com extensão da proteção para cônjuge, filhos e pais.",
     ideal: ["Quem tem filhos", "Provedores da família", "Quem busca segurança patrimonial", "Quem quer planejar o futuro"],
   },
   {
@@ -63,7 +63,7 @@ const products: ProductDetail[] = [
       "Atendimento humano em sinistros",
       "Renovação automática facilitada",
     ],
-    benefit: "Atendimento prioritário e condições exclusivas para colaboradores AIRSUPPLY proteger o lar e a família.",
+    benefit: "Atendimento prioritário e condições exclusivas para colaboradores AirSupply proteger o lar e a família.",
     ideal: ["Famílias", "Quem mora sozinho", "Proprietários e inquilinos", "Quem viaja com frequência"],
   },
   {
@@ -84,7 +84,7 @@ const products: ProductDetail[] = [
       "Sugestão dos melhores fundos para o seu perfil",
       "Suporte humano durante toda a jornada",
     ],
-    benefit: "Consultoria especializada exclusiva para colaboradores AIRSUPPLY planejarem o futuro com tranquilidade.",
+    benefit: "Consultoria especializada exclusiva para colaboradores AirSupply planejarem o futuro com tranquilidade.",
     ideal: ["Quem pensa em aposentadoria", "Pais que querem educar os filhos", "Quem quer disciplina financeira", "Famílias que planejam sucessão"],
   },
   {
@@ -105,7 +105,7 @@ const products: ProductDetail[] = [
       "Suporte estratégico para lances",
       "Acompanhamento até a contemplação",
     ],
-    benefit: "Acesso prioritário a planos selecionados e consultoria dedicada para colaboradores AIRSUPPLY conquistarem mais.",
+    benefit: "Acesso prioritário a planos selecionados e consultoria dedicada para colaboradores AirSupply conquistarem mais.",
     ideal: ["Quem quer trocar de carro", "Quem sonha com a casa própria", "Quem busca o primeiro imóvel", "Famílias em planejamento"],
   },
   {
@@ -126,7 +126,7 @@ const products: ProductDetail[] = [
       "Suporte humano em emergências",
       "Comparação entre seguradoras",
     ],
-    benefit: "Condições diferenciadas para colaboradores AIRSUPPLY e proteção para viagens em família.",
+    benefit: "Condições diferenciadas para colaboradores AirSupply e proteção para viagens em família.",
     ideal: ["Quem viaja a trabalho", "Famílias em férias", "Mochileiros e intercambistas", "Cruzeiristas"],
   },
   {
@@ -147,7 +147,7 @@ const products: ProductDetail[] = [
       "Suporte humano em sinistros",
       "Comparação entre seguradoras",
     ],
-    benefit: "Vantagens exclusivas para colaboradores AIRSUPPLY protegerem ferramentas de trabalho e lazer.",
+    benefit: "Vantagens exclusivas para colaboradores AirSupply protegerem ferramentas de trabalho e lazer.",
     ideal: ["Profissionais que usam notebook", "Ciclistas urbanos", "Gamers", "Criadores de conteúdo"],
   },
   {
@@ -168,7 +168,7 @@ const products: ProductDetail[] = [
       "Atendimento humano e consultivo",
       "Suporte na renovação contratual",
     ],
-    benefit: "Atendimento prioritário e condições facilitadas para colaboradores AIRSUPPLY conquistarem o lar ideal.",
+    benefit: "Atendimento prioritário e condições facilitadas para colaboradores AirSupply conquistarem o lar ideal.",
     ideal: ["Quem está mudando de cidade", "Jovens em primeira locação", "Quem não quer comprometer poupança", "Famílias em transição"],
   },
   {
@@ -189,7 +189,7 @@ const products: ProductDetail[] = [
       "Atendimento humano em qualquer dúvida",
       "Sem burocracia na contratação",
     ],
-    benefit: "Condições diferenciadas para colaboradores AIRSUPPLY cuidarem dos pets da família com tranquilidade.",
+    benefit: "Condições diferenciadas para colaboradores AirSupply cuidarem dos pets da família com tranquilidade.",
     ideal: ["Tutores de cães e gatos", "Famílias com vários pets", "Pets idosos", "Quem quer cuidar do preventivo"],
   },
 ];
