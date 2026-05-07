@@ -69,9 +69,13 @@ app.post("/lead", async (req, res) => {
       email = "",
       whatsapp = "",
       tipoSeguro = "",
-      melhorHorario = "",
+      objetivo = "",
+      melhorHorario = "", // legado
+      seguradoraAtual = "",
+      vencimento = "",
       observacoes = "",
       origem = "airsupply",
+      formType = "cotacao", // "cotacao" | "renovacao"
     } = req.body || {};
 
     // Validação básica
@@ -85,28 +89,51 @@ app.post("/lead", async (req, res) => {
       return res.status(400).json({ error: "Tipo de seguro inválido" });
     if (observacoes && observacoes.length > 500)
       return res.status(400).json({ error: "Observações muito longas" });
+    if (formType === "renovacao") {
+      if (!seguradoraAtual || seguradoraAtual.length > 100)
+        return res.status(400).json({ error: "Seguradora atual inválida" });
+      if (!vencimento || vencimento.length > 20)
+        return res.status(400).json({ error: "Vencimento inválido" });
+    }
+
+    const isRenovacao = formType === "renovacao";
+    const tagOrigem = isRenovacao
+      ? `[ACOMPANHAMENTO DE RENOVAÇÃO] ${escape(origem).toUpperCase()}`
+      : `Novo lead — ${escape(origem).toUpperCase()}`;
 
     // 1) E-mail interno (CRM)
+    const linhasExtras = isRenovacao
+      ? `
+          <tr><td style="background:#f5f7fb"><b>Seguradora atual</b></td><td>${escape(seguradoraAtual)}</td></tr>
+          <tr><td style="background:#f5f7fb"><b>Vencimento</b></td><td>${escape(vencimento)}</td></tr>`
+      : `
+          <tr><td style="background:#f5f7fb"><b>O que procura</b></td><td>${escape(objetivo) || "—"}</td></tr>
+          ${melhorHorario ? `<tr><td style="background:#f5f7fb"><b>Melhor horário</b></td><td>${escape(melhorHorario)}</td></tr>` : ""}
+          <tr><td style="background:#f5f7fb;vertical-align:top"><b>Observações</b></td><td>${escape(observacoes) || "—"}</td></tr>`;
+
     const crmHtml = `
       <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;color:#0f1b3d">
-        <h2 style="color:#0f1b3d;margin:0 0 16px">🔔 Novo lead — ${escape(origem).toUpperCase()}</h2>
+        <h2 style="color:#0f1b3d;margin:0 0 16px">${isRenovacao ? "🔔 " : "🔔 "}${tagOrigem}</h2>
         <table cellpadding="8" style="border-collapse:collapse;width:100%;font-size:14px">
           <tr><td style="background:#f5f7fb;width:160px"><b>Nome</b></td><td>${escape(nome)}</td></tr>
           <tr><td style="background:#f5f7fb"><b>E-mail</b></td><td><a href="mailto:${escape(email)}">${escape(email)}</a></td></tr>
           <tr><td style="background:#f5f7fb"><b>WhatsApp</b></td><td>${escape(whatsapp)}</td></tr>
           <tr><td style="background:#f5f7fb"><b>Tipo de seguro</b></td><td>${escape(tipoSeguro)}</td></tr>
-          <tr><td style="background:#f5f7fb"><b>Melhor horário</b></td><td>${escape(melhorHorario)}</td></tr>
-          <tr><td style="background:#f5f7fb;vertical-align:top"><b>Observações</b></td><td>${escape(observacoes) || "—"}</td></tr>
+          ${linhasExtras}
           <tr><td style="background:#f5f7fb"><b>Origem</b></td><td>${escape(origem)}</td></tr>
         </table>
         <p style="margin-top:20px;font-size:12px;color:#666">Enviado automaticamente pelo formulário da landing page AirSupply.</p>
       </div>`;
 
+    const crmSubject = isRenovacao
+      ? `[ACOMPANHAMENTO RENOVAÇÃO] AirSupply — ${nome} (${tipoSeguro})`
+      : `Novo lead AirSupply — ${nome} (${tipoSeguro})`;
+
     await resend.emails.send({
       from: FROM_EMAIL,
       to: LEAD_TO_EMAIL,
       replyTo: email,
-      subject: `Novo lead AirSupply — ${nome} (${tipoSeguro})`,
+      subject: crmSubject,
       html: crmHtml,
     });
 
@@ -139,7 +166,7 @@ app.post("/lead", async (req, res) => {
           <tr>
             <td style="padding:40px 40px 8px 40px;">
               <h1 style="margin:0;font-size:26px;line-height:1.3;color:#0B1B53;font-weight:700;letter-spacing:-0.3px;">
-                Recebemos sua solicitação!
+                ${isRenovacao ? "Recebemos suas informações!" : "Recebemos sua solicitação!"}
               </h1>
             </td>
           </tr>
@@ -150,12 +177,24 @@ app.post("/lead", async (req, res) => {
               <p style="margin:0 0 16px 0;font-size:16px;line-height:1.6;color:#1E293B;">
                 Olá <strong>${escape(nome)}</strong>,
               </p>
+              ${isRenovacao ? `
+              <p style="margin:0 0 16px 0;font-size:16px;line-height:1.6;color:#1E293B;">
+                Recebemos suas informações e vamos acompanhar o vencimento do seu seguro.
+              </p>
+              <p style="margin:0 0 16px 0;font-size:16px;line-height:1.6;color:#475569;">
+                Próximo à renovação, nossa equipe entrará em contato para apresentar opções e condições disponíveis para colaboradores AirSupply.
+              </p>
+              <p style="margin:0 0 16px 0;font-size:16px;line-height:1.6;color:#475569;">
+                A <strong style="color:#0B1B53;">Agilizou Seguros</strong> agradece sua confiança.
+              </p>
+              ` : `
               <p style="margin:0 0 16px 0;font-size:16px;line-height:1.6;color:#1E293B;">
                 Obrigado por entrar em contato com a <strong>Agilizou Seguros</strong>.
               </p>
               <p style="margin:0 0 16px 0;font-size:16px;line-height:1.6;color:#475569;">
-                Recebemos sua solicitação sobre <strong style="color:#0B1B53;">${escape(tipoSeguro)}</strong> e um especialista entrará em contato no horário preferencial <strong style="color:#0B1B53;">${escape(melhorHorario)}</strong>.
+                Recebemos sua solicitação sobre <strong style="color:#0B1B53;">${escape(tipoSeguro)}</strong>${objetivo ? ` (<strong style="color:#0B1B53;">${escape(objetivo)}</strong>)` : ""} e um especialista entrará em contato em breve.
               </p>
+              `}
             </td>
           </tr>
 
@@ -166,21 +205,26 @@ app.post("/lead", async (req, res) => {
                 <tr>
                   <td style="padding:24px 28px;">
                     <p style="margin:0 0 16px 0;font-size:13px;font-weight:700;letter-spacing:1px;color:#FF6B00;text-transform:uppercase;">
-                      O que você pode esperar
+                      ${isRenovacao ? "Como vamos te acompanhar" : "O que você pode esperar"}
                     </p>
                     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                      ${isRenovacao ? `
+                      <tr><td style="padding:6px 0;font-size:15px;color:#1E293B;line-height:1.5;"><span style="color:#FF6B00;font-weight:700;">✔</span> &nbsp;Acompanhamento da sua apólice</td></tr>
+                      <tr><td style="padding:6px 0;font-size:15px;color:#1E293B;line-height:1.5;"><span style="color:#FF6B00;font-weight:700;">✔</span> &nbsp;Contato no momento certo, sem pressa</td></tr>
+                      <tr><td style="padding:6px 0;font-size:15px;color:#1E293B;line-height:1.5;"><span style="color:#FF6B00;font-weight:700;">✔</span> &nbsp;Comparativo de novas condições</td></tr>
+                      <tr><td style="padding:6px 0;font-size:15px;color:#1E293B;line-height:1.5;"><span style="color:#FF6B00;font-weight:700;">✔</span> &nbsp;Condições exclusivas AirSupply</td></tr>
+                      ` : `
                       <tr><td style="padding:6px 0;font-size:15px;color:#1E293B;line-height:1.5;"><span style="color:#FF6B00;font-weight:700;">✔</span> &nbsp;Atendimento consultivo</td></tr>
                       <tr><td style="padding:6px 0;font-size:15px;color:#1E293B;line-height:1.5;"><span style="color:#FF6B00;font-weight:700;">✔</span> &nbsp;Condições exclusivas</td></tr>
                       <tr><td style="padding:6px 0;font-size:15px;color:#1E293B;line-height:1.5;"><span style="color:#FF6B00;font-weight:700;">✔</span> &nbsp;Atendimento humanizado</td></tr>
                       <tr><td style="padding:6px 0;font-size:15px;color:#1E293B;line-height:1.5;"><span style="color:#FF6B00;font-weight:700;">✔</span> &nbsp;Cobertura para toda a família</td></tr>
+                      `}
                     </table>
                   </td>
                 </tr>
               </table>
             </td>
           </tr>
-
-          <!-- Botão WhatsApp -->
           <tr>
             <td align="center" style="padding:32px 40px 16px 40px;">
               <table role="presentation" cellpadding="0" cellspacing="0" border="0">
@@ -251,7 +295,9 @@ app.post("/lead", async (req, res) => {
     await resend.emails.send({
       from: FROM_EMAIL,
       to: email,
-      subject: "Recebemos sua solicitação — Agilizou Seguros",
+      subject: isRenovacao
+        ? "Vamos acompanhar a renovação do seu seguro — Agilizou"
+        : "Recebemos sua solicitação — Agilizou Seguros",
       html: thanksHtml,
     });
 

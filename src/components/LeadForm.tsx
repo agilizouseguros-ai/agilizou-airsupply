@@ -7,7 +7,7 @@ const schema = z.object({
   whatsapp: z.string().trim().min(14, "WhatsApp inválido").max(20),
   email: z.string().trim().email("E-mail inválido").max(255),
   produto: z.string().min(1, "Selecione um produto"),
-  horario: z.string().min(1, "Selecione um horário"),
+  objetivo: z.string().min(1, "Selecione uma opção"),
   observacoes: z.string().max(500).optional(),
 });
 
@@ -16,7 +16,10 @@ const products = [
   "Consórcio", "Seguro Viagem", "Equipamentos", "Seguro Fiança", "Plano PET", "Outro",
 ];
 
-const horarios = ["Manhã (8h–12h)", "Tarde (12h–18h)", "Noite (18h–21h)", "Qualquer horário"];
+const objetivos = [
+  "Contratar um seguro novo",
+  "Já possuo seguro e quero renovar",
+];
 
 function maskPhone(v: string) {
   const d = v.replace(/\D/g, "").slice(0, 11);
@@ -27,7 +30,7 @@ function maskPhone(v: string) {
 }
 
 export function LeadForm() {
-  const [form, setForm] = useState({ nome: "", whatsapp: "", email: "", produto: "", horario: "", observacoes: "" });
+  const [form, setForm] = useState({ nome: "", whatsapp: "", email: "", produto: "", objetivo: "", observacoes: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [loading, setLoading] = useState(false);
   const [done, setDone] = useState(false);
@@ -70,7 +73,7 @@ export function LeadForm() {
         email: form.email,
         whatsapp: form.whatsapp,
         tipoSeguro: form.produto,
-        melhorHorario: form.horario,
+        objetivo: form.objetivo,
         observacoes: form.observacoes ?? "",
         origem: "airsupply",
       };
@@ -154,10 +157,10 @@ export function LeadForm() {
             {products.map((p) => <option key={p} value={p}>{p}</option>)}
           </select>
         </Field>
-        <Field label="Melhor horário" error={errors.horario}>
-          <select className="input" value={form.horario} onChange={(e) => update("horario", e.target.value)}>
+        <Field label="O que você procura?" error={errors.objetivo}>
+          <select className="input" value={form.objetivo} onChange={(e) => update("objetivo", e.target.value)}>
             <option value="">Selecione...</option>
-            {horarios.map((h) => <option key={h} value={h}>{h}</option>)}
+            {objetivos.map((h) => <option key={h} value={h}>{h}</option>)}
           </select>
         </Field>
       </div>

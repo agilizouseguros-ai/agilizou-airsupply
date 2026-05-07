@@ -5,6 +5,7 @@ import { Benefits } from "@/components/Benefits";
 import { Products } from "@/components/Products";
 import { HowItWorks } from "@/components/HowItWorks";
 import { FormSection } from "@/components/FormSection";
+import { RenewalSection } from "@/components/RenewalSection";
 import { FAQ } from "@/components/FAQ";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
@@ -20,6 +21,7 @@ export default function App() {
         <Products />
         <HowItWorks />
         <FormSection />
+        <RenewalSection />
         <FAQ />
       </main>
       <Footer />
