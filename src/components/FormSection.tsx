@@ -36,7 +36,7 @@ export function FormSection() {
             }}
             className="mt-8 inline-flex items-center justify-center gap-2 rounded-full border border-brand-navy/20 bg-card px-5 py-3 text-sm font-semibold text-brand-navy hover:border-brand-orange hover:text-brand-orange transition-all shadow-sm"
           >
-            Já tenho seguro atualmente, como aproveitar meu benefício?
+            Meu seguro vence mas só daqui há alguns meses, como aproveitar meu benefício?
           </a>
         </div>
         <LeadForm />
