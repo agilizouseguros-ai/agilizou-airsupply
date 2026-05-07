@@ -69,9 +69,13 @@ app.post("/lead", async (req, res) => {
       email = "",
       whatsapp = "",
       tipoSeguro = "",
-      melhorHorario = "",
+      objetivo = "",
+      melhorHorario = "", // legado
+      seguradoraAtual = "",
+      vencimento = "",
       observacoes = "",
       origem = "airsupply",
+      formType = "cotacao", // "cotacao" | "renovacao"
     } = req.body || {};
 
     // Validação básica
@@ -85,28 +89,51 @@ app.post("/lead", async (req, res) => {
       return res.status(400).json({ error: "Tipo de seguro inválido" });
     if (observacoes && observacoes.length > 500)
       return res.status(400).json({ error: "Observações muito longas" });
+    if (formType === "renovacao") {
+      if (!seguradoraAtual || seguradoraAtual.length > 100)
+        return res.status(400).json({ error: "Seguradora atual inválida" });
+      if (!vencimento || vencimento.length > 20)
+        return res.status(400).json({ error: "Vencimento inválido" });
+    }
+
+    const isRenovacao = formType === "renovacao";
+    const tagOrigem = isRenovacao
+      ? `[ACOMPANHAMENTO DE RENOVAÇÃO] ${escape(origem).toUpperCase()}`
+      : `Novo lead — ${escape(origem).toUpperCase()}`;
 
     // 1) E-mail interno (CRM)
+    const linhasExtras = isRenovacao
+      ? `
+          <tr><td style="background:#f5f7fb"><b>Seguradora atual</b></td><td>${escape(seguradoraAtual)}</td></tr>
+          <tr><td style="background:#f5f7fb"><b>Vencimento</b></td><td>${escape(vencimento)}</td></tr>`
+      : `
+          <tr><td style="background:#f5f7fb"><b>O que procura</b></td><td>${escape(objetivo) || "—"}</td></tr>
+          ${melhorHorario ? `<tr><td style="background:#f5f7fb"><b>Melhor horário</b></td><td>${escape(melhorHorario)}</td></tr>` : ""}
+          <tr><td style="background:#f5f7fb;vertical-align:top"><b>Observações</b></td><td>${escape(observacoes) || "—"}</td></tr>`;
+
     const crmHtml = `
       <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;color:#0f1b3d">
-        <h2 style="color:#0f1b3d;margin:0 0 16px">🔔 Novo lead — ${escape(origem).toUpperCase()}</h2>
+        <h2 style="color:#0f1b3d;margin:0 0 16px">${isRenovacao ? "🔔 " : "🔔 "}${tagOrigem}</h2>
         <table cellpadding="8" style="border-collapse:collapse;width:100%;font-size:14px">
           <tr><td style="background:#f5f7fb;width:160px"><b>Nome</b></td><td>${escape(nome)}</td></tr>
           <tr><td style="background:#f5f7fb"><b>E-mail</b></td><td><a href="mailto:${escape(email)}">${escape(email)}</a></td></tr>
           <tr><td style="background:#f5f7fb"><b>WhatsApp</b></td><td>${escape(whatsapp)}</td></tr>
           <tr><td style="background:#f5f7fb"><b>Tipo de seguro</b></td><td>${escape(tipoSeguro)}</td></tr>
-          <tr><td style="background:#f5f7fb"><b>Melhor horário</b></td><td>${escape(melhorHorario)}</td></tr>
-          <tr><td style="background:#f5f7fb;vertical-align:top"><b>Observações</b></td><td>${escape(observacoes) || "—"}</td></tr>
+          ${linhasExtras}
           <tr><td style="background:#f5f7fb"><b>Origem</b></td><td>${escape(origem)}</td></tr>
         </table>
         <p style="margin-top:20px;font-size:12px;color:#666">Enviado automaticamente pelo formulário da landing page AirSupply.</p>
       </div>`;
 
+    const crmSubject = isRenovacao
+      ? `[ACOMPANHAMENTO RENOVAÇÃO] AirSupply — ${nome} (${tipoSeguro})`
+      : `Novo lead AirSupply — ${nome} (${tipoSeguro})`;
+
     await resend.emails.send({
       from: FROM_EMAIL,
       to: LEAD_TO_EMAIL,
       replyTo: email,
-      subject: `Novo lead AirSupply — ${nome} (${tipoSeguro})`,
+      subject: crmSubject,
       html: crmHtml,
     });
 
