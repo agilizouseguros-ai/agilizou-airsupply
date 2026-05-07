@@ -295,7 +295,9 @@ app.post("/lead", async (req, res) => {
     await resend.emails.send({
       from: FROM_EMAIL,
       to: email,
-      subject: "Recebemos sua solicitação — Agilizou Seguros",
+      subject: isRenovacao
+        ? "Vamos acompanhar a renovação do seu seguro — Agilizou"
+        : "Recebemos sua solicitação — Agilizou Seguros",
       html: thanksHtml,
     });
 
