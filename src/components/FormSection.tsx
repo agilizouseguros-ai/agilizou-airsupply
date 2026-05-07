@@ -28,6 +28,16 @@ export function FormSection() {
               </li>
             ))}
           </ul>
+          <a
+            href="#renovacao"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById("renovacao")?.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="mt-8 inline-flex items-center justify-center gap-2 rounded-full border border-brand-navy/20 bg-card px-5 py-3 text-sm font-semibold text-brand-navy hover:border-brand-orange hover:text-brand-orange transition-all shadow-sm"
+          >
+            Já tenho seguro atualmente, como aproveitar meu benefício?
+          </a>
         </div>
         <LeadForm />
       </div>
