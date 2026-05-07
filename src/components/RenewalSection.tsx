@@ -96,8 +96,7 @@ export function RenewalSection() {
                   <BellRing className="h-5 w-5 text-brand-orange" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-brand-navy">Sem pressão. Sem venda imediata.</p>
-                  <p className="text-sm text-muted-foreground mt-1">
+                  <p className="text-sm text-muted-foreground">
                     Você só recebe um contato consultivo no momento certo, próximo ao vencimento.
                   </p>
                 </div>
