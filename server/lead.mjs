@@ -166,7 +166,7 @@ app.post("/lead", async (req, res) => {
           <tr>
             <td style="padding:40px 40px 8px 40px;">
               <h1 style="margin:0;font-size:26px;line-height:1.3;color:#0B1B53;font-weight:700;letter-spacing:-0.3px;">
-                Recebemos sua solicitação!
+                ${isRenovacao ? "Recebemos suas informações!" : "Recebemos sua solicitação!"}
               </h1>
             </td>
           </tr>
@@ -177,12 +177,24 @@ app.post("/lead", async (req, res) => {
               <p style="margin:0 0 16px 0;font-size:16px;line-height:1.6;color:#1E293B;">
                 Olá <strong>${escape(nome)}</strong>,
               </p>
+              ${isRenovacao ? `
+              <p style="margin:0 0 16px 0;font-size:16px;line-height:1.6;color:#1E293B;">
+                Recebemos suas informações e vamos acompanhar o vencimento do seu seguro.
+              </p>
+              <p style="margin:0 0 16px 0;font-size:16px;line-height:1.6;color:#475569;">
+                Próximo à renovação, nossa equipe entrará em contato para apresentar opções e condições disponíveis para colaboradores AirSupply.
+              </p>
+              <p style="margin:0 0 16px 0;font-size:16px;line-height:1.6;color:#475569;">
+                A <strong style="color:#0B1B53;">Agilizou Seguros</strong> agradece sua confiança.
+              </p>
+              ` : `
               <p style="margin:0 0 16px 0;font-size:16px;line-height:1.6;color:#1E293B;">
                 Obrigado por entrar em contato com a <strong>Agilizou Seguros</strong>.
               </p>
               <p style="margin:0 0 16px 0;font-size:16px;line-height:1.6;color:#475569;">
-                Recebemos sua solicitação sobre <strong style="color:#0B1B53;">${escape(tipoSeguro)}</strong> e um especialista entrará em contato no horário preferencial <strong style="color:#0B1B53;">${escape(melhorHorario)}</strong>.
+                Recebemos sua solicitação sobre <strong style="color:#0B1B53;">${escape(tipoSeguro)}</strong>${objetivo ? ` (<strong style="color:#0B1B53;">${escape(objetivo)}</strong>)` : ""} e um especialista entrará em contato em breve.
               </p>
+              `}
             </td>
           </tr>
 
@@ -193,21 +205,26 @@ app.post("/lead", async (req, res) => {
                 <tr>
                   <td style="padding:24px 28px;">
                     <p style="margin:0 0 16px 0;font-size:13px;font-weight:700;letter-spacing:1px;color:#FF6B00;text-transform:uppercase;">
-                      O que você pode esperar
+                      ${isRenovacao ? "Como vamos te acompanhar" : "O que você pode esperar"}
                     </p>
                     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                      ${isRenovacao ? `
+                      <tr><td style="padding:6px 0;font-size:15px;color:#1E293B;line-height:1.5;"><span style="color:#FF6B00;font-weight:700;">✔</span> &nbsp;Acompanhamento da sua apólice</td></tr>
+                      <tr><td style="padding:6px 0;font-size:15px;color:#1E293B;line-height:1.5;"><span style="color:#FF6B00;font-weight:700;">✔</span> &nbsp;Contato no momento certo, sem pressa</td></tr>
+                      <tr><td style="padding:6px 0;font-size:15px;color:#1E293B;line-height:1.5;"><span style="color:#FF6B00;font-weight:700;">✔</span> &nbsp;Comparativo de novas condições</td></tr>
+                      <tr><td style="padding:6px 0;font-size:15px;color:#1E293B;line-height:1.5;"><span style="color:#FF6B00;font-weight:700;">✔</span> &nbsp;Condições exclusivas AirSupply</td></tr>
+                      ` : `
                       <tr><td style="padding:6px 0;font-size:15px;color:#1E293B;line-height:1.5;"><span style="color:#FF6B00;font-weight:700;">✔</span> &nbsp;Atendimento consultivo</td></tr>
                       <tr><td style="padding:6px 0;font-size:15px;color:#1E293B;line-height:1.5;"><span style="color:#FF6B00;font-weight:700;">✔</span> &nbsp;Condições exclusivas</td></tr>
                       <tr><td style="padding:6px 0;font-size:15px;color:#1E293B;line-height:1.5;"><span style="color:#FF6B00;font-weight:700;">✔</span> &nbsp;Atendimento humanizado</td></tr>
                       <tr><td style="padding:6px 0;font-size:15px;color:#1E293B;line-height:1.5;"><span style="color:#FF6B00;font-weight:700;">✔</span> &nbsp;Cobertura para toda a família</td></tr>
+                      `}
                     </table>
                   </td>
                 </tr>
               </table>
             </td>
           </tr>
-
-          <!-- Botão WhatsApp -->
           <tr>
             <td align="center" style="padding:32px 40px 16px 40px;">
               <table role="presentation" cellpadding="0" cellspacing="0" border="0">
