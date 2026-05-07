@@ -21,6 +21,7 @@ export default function App() {
         <Products />
         <HowItWorks />
         <FormSection />
+        <RenewalSection />
         <FAQ />
       </main>
       <Footer />
